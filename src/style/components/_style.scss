@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+.button {
+    padding: 10px;
+    background-color: blueviolet;
+    border: none;
+    cursor: pointer;
+}
+
+.padding {
+    padding: 0 50px;
+}
+
+@media (min-width: 768px) {
+    .padding {
+        padding: 0;
+    }
+}
+
+.calculate__btn {
+    background-color: #cd291e;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 40px;
+        font-size: 20px;
+        border: none;
+        transition: all 0.3s;
+        text-decoration: none;
+}
