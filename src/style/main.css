@@ -385,11 +385,6 @@ html {
   scroll-behavior: smooth;
 }
 
-#map {
-  width: 95vw;
-  height: 90vh;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -403,7 +398,6 @@ html {
 
 .header__container {
   max-width: 1200px;
-  padding: 0 50px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
