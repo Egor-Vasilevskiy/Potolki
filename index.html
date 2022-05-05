@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./src/style/main.css">
   <link rel="icon" href="./src/image/favicon.png" type="image/x-icon">
+  <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   <title>Натяжные потолки Минск</title>
 </head>
 
@@ -34,7 +38,7 @@
         </div>
       </div>
     </header>
-    
+
     <div class="intro">
       <div class="intro__container">
 
@@ -53,18 +57,19 @@
 
         <div class="intro__body padding">
           <div class="intro__body--left">
-            <h1 class="intro__title">Натяжные <br> потолки <p>в минске</p></h1>
+            <h1 class="intro__title">Натяжные <br> потолки <p>в минске</p>
+            </h1>
             <a href="#" class="calculate__btn">Рассчитать стоимость</a>
           </div>
 
-          <img src="./src/image/img_intro.jpg" alt="Строитель" class="intro__body--right"/>
+          <img src="./src/image/img_intro.jpg" alt="Строитель" class="intro__body--right" />
         </div>
       </div>
       <section class="calculator">
         <div class="calculator__container">
           <div class="border">
             <div class="calculator__body padding">
-  
+
               <div class="block">
                 <div class="input">
                   <label for="area">Площадь комнаты(м2)</label>
@@ -75,7 +80,7 @@
                   <input class="input__number" type="text" name="" id="corner" value="0">
                 </div>
               </div>
-    
+
               <div class="block">
                 <div class="input">
                   <label for="lamp">Светильники(шт)</label>
@@ -86,16 +91,18 @@
                   <input class="input__number" type="text" name="" id="chandelier" value="0">
                 </div>
               </div>
-    
+
               <div class="block">
                 <input type="text" name="callName" class="input__name" placeholder="Введите имя">
-                <input type="tel" name="callPhone" class="input__phone" placeholder="Введите телефон*" minlength="7" required="" errormsg="Заполните правильный номер" im-insert="true">
+                <input type="tel" name="callPhone" class="input__phone" placeholder="Введите телефон*" minlength="7"
+                  required="" errormsg="Заполните правильный номер" im-insert="true">
               </div>
             </div>
-    
+
             <div class="calculator__footer">
               <button class="calculate__btn">Рассчитайте стоимость</button>
-              <em class="calculator__footer--akcent">Отправляя форму, Вы даете согласие на обработку своих персональных данных</em>
+              <em class="calculator__footer--akcent">Отправляя форму, Вы даете согласие на обработку своих персональных
+                данных</em>
             </div>
           </div>
         </div>
@@ -103,11 +110,61 @@
     </div>
 
     <main class="main">
-      
+      <section class="sale">
+        <div class="sale__container">
+          <div class="sale__header">
+            <h2 class="sale__title">Наши акции и скидки</h2>
+          </div>
+
+          <div class="sale__body">
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-4.jpg" />
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+
+            <div thumbsSlider="" class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./src/image/slider-4.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sale__footer">
+            <button class="button sale__btn">Отправить заявку</button>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="./src/js/app.js"></script>
+  <script src="./src/js/swiper/swiper.js"></script>
 </body>
 
 </html>
