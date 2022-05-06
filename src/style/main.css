@@ -972,13 +972,7 @@ h2::before {
 }
 
 .types__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 20px 0;
+  margin: 0 auto;
 }
 
 .types__container {
@@ -1034,6 +1028,7 @@ h2::before {
   .types__title {
     font-size: 25px;
     white-space: pre-line;
+    margin-bottom: 20px;
   }
   .types__body {
     max-width: 320px;
