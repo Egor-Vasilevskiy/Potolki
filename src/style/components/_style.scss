@@ -18,6 +18,14 @@ body._lock {
 
 .padding {
     padding: 0 50px;
+} 
+
+.title {
+    font-size: 55px;
+    line-height: 1.1em;
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
 }
 
 @media (min-width: 768px) {
