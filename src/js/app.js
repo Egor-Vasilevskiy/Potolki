@@ -2,29 +2,29 @@
 const header = document.querySelector('header');
 const prevScrollPos = window.pageYOffset;
 
-if(window.matchMedia("only screen and (max-width: 760px)").matches) {
-  window.onscroll = function() {
+if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+  window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
     if (window.pageYOffset > 100) {
-          header.style.top = '0px'
-      } else {
-          header.style.top = '-100px';
-      }
+      header.style.top = '0px'
+    } else {
+      header.style.top = '-100px';
+    }
     prevScrollPos = currentScrollPos;
   };
-  } else {
+} else {
   //mobile device
-  }
+}
 
 // Открытие бургер меню
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
 if (iconMenu) {
-	iconMenu.addEventListener("click", function (e) {
-		document.body.classList.toggle('_lock');
-		iconMenu.classList.toggle('_active');
-		menuBody.classList.toggle('_active');
-	});
+  iconMenu.addEventListener("click", function (e) {
+    document.body.classList.toggle('_lock');
+    iconMenu.classList.toggle('_active');
+    menuBody.classList.toggle('_active');
+  });
 }
 
 //блокировка прокрутки
@@ -35,3 +35,33 @@ function onMenuLinkClick() {
     menuBody.classList.remove('_active');
   }
 }
+
+//Tabs 
+
+const tabsBtn   = document.querySelectorAll(".tabs__nav-btn");
+const tabsItems = document.querySelectorAll(".tabs__item");
+
+tabsBtn.forEach(onTabClick);
+
+function onTabClick(item) {
+    item.addEventListener("click", function() {
+        let currentBtn = item;
+        let tabId = currentBtn.getAttribute("data-tab");
+        let currentTab = document.querySelector(tabId);
+
+        if( ! currentBtn.classList.contains('active') ) {
+            tabsBtn.forEach(function(item) {
+                item.classList.remove('active');
+            });
+    
+            tabsItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+    
+            currentBtn.classList.add('active');
+            currentTab.classList.add('active');
+        }
+    });
+}
+
+document.querySelector('.tabs__nav-btn').click();

@@ -748,6 +748,7 @@ body._lock {
   text-align: center;
   padding-bottom: 30px;
   position: relative;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
@@ -775,7 +776,7 @@ body._lock {
 
 .border {
   border: 2px solid lightgray;
-  padding: 50px 60px 40px;
+  padding: 50px 60px;
 }
 
 .calculator__container {
@@ -972,6 +973,7 @@ h2::before {
 }
 
 .types__body {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1108,5 +1110,223 @@ h2::before {
   .swiper-button-prev::after {
     background-color: brown;
     border-radius: 5px;
+  }
+}
+
+.chandelier {
+  width: 100%;
+}
+
+.chandelier__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chandelier__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.chandelier__title {
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+.tabs__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs__nav-btn {
+  padding: 10px 25px;
+  border: 1px solid lightgray;
+  background: #fff;
+  border-radius: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.tabs__nav-btn.active {
+  background-color: rebeccapurple;
+}
+
+.tabs__content {
+  padding: 30px;
+  background-color: #fff;
+}
+
+.tabs__item {
+  display: none;
+}
+
+.tabs__item.active {
+  display: block;
+}
+
+.card__container {
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .chandelier__title {
+    font-size: 25px;
+  }
+  .tabs__nav {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .tabs__nav-btn {
+    margin: 0 5px 10px 0;
+  }
+  .tabs__content {
+    padding: 10px;
+  }
+}
+
+.advantage {
+  width: 100%;
+}
+
+.advantage__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantage__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.advantage__title {
+  margin-bottom: 20px;
+}
+
+.advantage__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.item {
+  margin: 45px auto 0;
+  padding-left: 140px;
+  position: relative;
+}
+
+.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 108px;
+  height: 108px;
+  border: 4px solid #cd291e;
+  border-radius: 50%;
+}
+
+.item .icons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 60px;
+  width: 60px;
+  background-image: url(../image/bg_advantages_icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.item .icons2::before {
+  background-position: -60px 0;
+}
+
+.item .icons3::before {
+  background-position: -120px 0;
+}
+
+.item .icons4::before {
+  background-position: -180px 0;
+}
+
+.item .icons5::before {
+  background-position: -240px 0;
+}
+
+.item .icons6::before {
+  background-position: -300px 0;
+}
+
+.advantage__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 108px;
+  vertical-align: middle;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.advantage__text h3 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.advantage__text p {
+  margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+  .advantage__title {
+    font-size: 25px;
+  }
+  .advantage__body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .item {
+    padding-left: 130px;
   }
 }
