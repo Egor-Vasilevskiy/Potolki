@@ -50,7 +50,7 @@ var swiper = new Swiper('.tabs__item', {
     prevEl: '.swiper-button-prev',
   },
   pagination: {
-    el: '.swiper-pagination-tabs',
+    el: '.swiper-pagination',
     clickable: true,
   },
   loop: true,
