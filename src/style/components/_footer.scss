@@ -1,0 +1,31 @@
+.footer {
+    width: 100%;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+
+.social a {
+    cursor: pointer;
+    vertical-align: top;
+    transition: 200ms;
+    margin: 0 2px 0 2px;
+    width: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 35px;
+    display: inline-block;
+    background-image: url(../image/svg/icons_instagram.svg);
+}
+
+.social a:nth-child(2) {
+    background-image: url(../image/svg/icons_vk.svg);
+}

@@ -38,30 +38,51 @@ function onMenuLinkClick() {
 
 //Tabs 
 
-const tabsBtn   = document.querySelectorAll(".tabs__nav-btn");
+const tabsBtn = document.querySelectorAll(".tabs__nav-btn");
 const tabsItems = document.querySelectorAll(".tabs__item");
 
 tabsBtn.forEach(onTabClick);
 
 function onTabClick(item) {
-    item.addEventListener("click", function() {
-        let currentBtn = item;
-        let tabId = currentBtn.getAttribute("data-tab");
-        let currentTab = document.querySelector(tabId);
+  item.addEventListener("click", function () {
+    let currentBtn = item;
+    let tabId = currentBtn.getAttribute("data-tab");
+    let currentTab = document.querySelector(tabId);
 
-        if( ! currentBtn.classList.contains('active') ) {
-            tabsBtn.forEach(function(item) {
-                item.classList.remove('active');
-            });
-    
-            tabsItems.forEach(function(item) {
-                item.classList.remove('active');
-            });
-    
-            currentBtn.classList.add('active');
-            currentTab.classList.add('active');
-        }
-    });
+    if (!currentBtn.classList.contains('active')) {
+      tabsBtn.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      tabsItems.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      currentBtn.classList.add('active');
+      currentTab.classList.add('active');
+    }
+  });
 }
 
 document.querySelector('.tabs__nav-btn').click();
+
+//Accordion
+
+const accordion = document.querySelectorAll('.accordion');
+
+
+accordion.forEach((item) =>
+  item.addEventListener('click', () => {
+    let panel = item.nextElementSibling;
+
+    if(panel.style.display === "block"){
+      panel.style.display = "none";
+      item.classList.toggle('active')
+      panel.style.maxHeight = null
+    } else {
+      panel.style.display = "block";
+      item.classList.toggle('active')
+      panel.style.maxHeight = panel.scrollHeight + 'px'
+    }
+  })
+)
