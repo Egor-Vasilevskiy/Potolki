@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
    License: none (public domain)
@@ -392,8 +393,8 @@ html {
   width: 100%;
   z-index: 10;
   background-color: #912105;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: top 0.5s;
+  transition: top 0.5s;
 }
 
 .header__container {
@@ -1008,6 +1009,16 @@ h2::before {
 
 .gallery__item .text p {
   margin: 20px 0;
+}
+
+.gallery__item .text button {
+  text-decoration: none;
+  display: inline-block;
+  color: #111;
+  border: 1px solid #111;
+  padding: 10px 20px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .gallery__item .text a {
@@ -1717,56 +1728,13 @@ h2::before {
   content: "\2796";
 }
 
-.contact {
-  background-color: #e5e7e8;
-  width: 100%;
-  padding-bottom: 20px;
-}
-
-.contact__container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact__body {
-  width: 100%;
-}
-
-.contact__body ul {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.contact__item {
-  position: relative;
-}
-
-.contact__item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50px;
-  width: 30px;
-  height: 42px;
-  background-image: url(../image/bg_icons_contacts.png);
-  background-repeat: no-repeat;
-}
-
-.phone::before {
-  background-position: 0 0;
-}
-
-.location::before {
-  background-position: -30px 0;
-}
-
 .footer {
+  padding: 30px 0px 70px 0px;
   width: 100%;
+  background-image: url(../image/bg_last.jpg);
+  background-size: cover;
+  background-position: center top;
+  color: #fff;
 }
 
 .footer__container {
@@ -1780,6 +1748,24 @@ h2::before {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.footer__header {
+  margin-bottom: 50px;
+}
+
+.footer__header ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer__number {
+  text-decoration: none;
+  color: #fff;
 }
 
 .social a {
@@ -1798,4 +1784,170 @@ h2::before {
 
 .social a:nth-child(2) {
   background-image: url(../image/svg/icons_vk.svg);
+}
+
+.footer__item {
+  position: relative;
+}
+
+.footer__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 30px;
+  height: 42px;
+  background-image: url(../image/bg_icons_contacts.png);
+  background-repeat: no-repeat;
+}
+
+.phone::before {
+  background-position: 0 0;
+}
+
+.location::before {
+  background-position: -30px 0;
+}
+
+@media (max-width: 767px) {
+  .footer__header ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__item {
+    margin: 20px;
+  }
+}
+
+.modal {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Скрыто по умолчанию */
+  position: fixed;
+  /* Оставаться на месте */
+  z-index: 1;
+  /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Полная ширина */
+  height: 100%;
+  /* Полная высота */
+  overflow: auto;
+  /* Включите прокрутку, если это необходимо */
+  background-color: black;
+  /* Цвет запасной вариант */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Черный с непрозрачностью */
+}
+
+/* Модальное содержание/коробка */
+.popup {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 650px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 36.5px 1.5px black;
+          box-shadow: 0 0 36.5px 1.5px black;
+}
+
+.popup__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.popup__header h3 {
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.popup__header p {
+  text-align: center;
+}
+
+.popup__body {
+  margin: 20px;
+}
+
+.popup__wrap {
+  border: 2px solid lightgray;
+}
+
+.popup__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup__form input {
+  margin: 10px 0;
+}
+
+.popup__form button {
+  margin-top: 10px;
+  text-decoration: none;
+  border: none;
+  color: #000;
+  background-color: darkmagenta;
+  padding: 10px;
+  border-radius: 5px;
+  width: 214px;
+}
+
+/* Кнопка закрытия */
+.close {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

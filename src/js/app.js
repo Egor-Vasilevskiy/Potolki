@@ -1,24 +1,25 @@
+let header = document.querySelector('header');
+var prevScrollpos = window.pageYOffset;
 
-const header = document.querySelector('header');
-const prevScrollPos = window.pageYOffset;
-
-if (window.matchMedia("only screen and (max-width: 760px)").matches) {
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (window.pageYOffset > 100) {
-      header.style.top = '0px'
-    } else {
-      header.style.top = '-100px';
-    }
-    prevScrollPos = currentScrollPos;
-  };
+if (window.matchMedia("(max-width:767px)").matches) {
+  header.style.top = "0";
 } else {
-  //mobile device
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      header.style.top = "0";
+    } else {
+      header.style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
 }
 
 // Открытие бургер меню
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
+const menuLink = document.querySelectorAll('.menu__link')
+const menuList = document.querySelector('.menu__list')
 if (iconMenu) {
   iconMenu.addEventListener("click", function (e) {
     document.body.classList.toggle('_lock');
@@ -35,6 +36,27 @@ function onMenuLinkClick() {
     menuBody.classList.remove('_active');
   }
 }
+
+// Закрытие при нажатии на ссылку 
+
+menuLink.forEach((item) => {
+  item.onclick = function () {
+    menuBody.classList.remove('_active');
+    iconMenu.classList.remove('_active');
+    document.body.classList.remove('_lock')
+  }
+})
+
+//Закрытие при клике на другую область 
+
+window.addEventListener('click', e => {
+  const target = e.target
+  if(target == menuBody) {
+    menuBody.classList.remove('_active');
+    iconMenu.classList.remove('_active');
+    document.body.classList.remove('_lock')
+  }
+})
 
 //Tabs 
 
@@ -75,7 +97,7 @@ accordion.forEach((item) =>
   item.addEventListener('click', () => {
     let panel = item.nextElementSibling;
 
-    if(panel.style.display === "block"){
+    if (panel.style.display === "block") {
       panel.style.display = "none";
       item.classList.toggle('active')
       panel.style.maxHeight = null
@@ -86,3 +108,39 @@ accordion.forEach((item) =>
     }
   })
 )
+
+
+//Modal 
+
+var modal = document.getElementById("myModal");
+
+// Получить кнопку, которая открывает модальный
+var btn = document.querySelectorAll("#myBtn");
+
+// Получить элемент <span>, который закрывает модальный
+var span = document.getElementsByClassName("close")[0];
+
+// Когда пользователь нажимает на кнопку, откройте модальный
+
+btn.forEach((item) =>
+  item.addEventListener('click', () => {
+    modal.style.display = "flex"
+    document.body.classList.add('_lock');
+    document.querySelector('.wrapper').style.opacity = '0.7';
+  })
+)
+// Когда пользователь нажимает на <span> (x), закройте модальное окно
+span.onclick = function () {
+  modal.style.display = "none";
+  document.body.classList.remove('_lock');
+  document.querySelector('.wrapper').style.opacity = '1';
+}
+
+// Когда пользователь щелкает в любом месте за пределами модального, закройте его
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.classList.remove('_lock');
+    document.querySelector('.wrapper').style.opacity = '1';
+  }
+}

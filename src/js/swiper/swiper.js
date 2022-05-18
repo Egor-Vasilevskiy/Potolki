@@ -51,9 +51,7 @@ var swiper = new Swiper('.tabs__item', {
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true,
   },
-  loop: true,
   breakpoints: {
     640: {
       slidesPerView: 2,

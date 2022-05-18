@@ -1,0 +1,102 @@
+.modal {
+    display: none;
+    align-items: center;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    /* Оставаться на месте */
+    z-index: 1;
+    /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Полная ширина */
+    height: 100%;
+    /* Полная высота */
+    overflow: auto;
+    /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0, 0, 0);
+    /* Цвет запасной вариант */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Черный с непрозрачностью */
+}
+
+/* Модальное содержание/коробка */
+.popup {
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 650px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 36.5px 1.5px black;
+
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        padding: 0 20px;
+
+        & h3 {
+            text-align: center;
+            font-size: 26px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        & p {
+            text-align: center;
+        }
+    }
+}
+
+.popup__body {
+    margin: 20px;
+}
+
+.popup__wrap {
+    border: 2px solid lightgray;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & input {
+        margin: 10px 0;
+    }
+
+    & button {
+        margin-top: 10px;
+        text-decoration: none;
+        border: none;
+        color: #000;
+        background-color: darkmagenta;
+        padding: 10px;
+        border-radius: 5px;
+        width: 214px;
+    }
+}
+
+/* Кнопка закрытия */
+.close {
+    position: absolute;
+    top: -30px;
+    right: 0px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
