@@ -642,11 +642,11 @@
           <p>Оставьте заявку в форме ниже, и договоримся об удобном времени для консультации.</p>
         </div>
         <div class="popup__body">
-          <form class="popup__form">
-            <input type="text" name="callName" class="input__name" placeholder="Введите имя">
-            <input type="tel" name="callPhone" class="input__phone" placeholder="Введите телефон*" minlength="7"
+          <form action="telegram.php" method="POST" class="popup__form">
+            <input type="text" name="name" class="input__name" placeholder="Введите имя">
+            <input type="tel" name="phone" class="input__phone" placeholder="Введите телефон*" minlength="7"
               required="" errormsg="Заполните правильный номер" im-insert="true">
-            <button>Отправить заявку</button>
+            <button type="submit">Отправить заявку</button>
           </form>
         </div>
       </div>
