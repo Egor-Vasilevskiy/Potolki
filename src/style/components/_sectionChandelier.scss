@@ -1,5 +1,6 @@
 .chandelier {
     width: 100%;
+    
     &__container {
         max-width: 1200px;
         margin: 0 auto;
@@ -13,8 +14,7 @@
     }
 
     &__title {
-        margin-top: 200px;
-        margin-bottom: 20px;
+        margin: 20px 0;
     }
 }
 
@@ -72,9 +72,6 @@
         }
     }
 
-    .tabs__content {
-        padding: 10px;
-    }
 }
 
 .gallery__item {
